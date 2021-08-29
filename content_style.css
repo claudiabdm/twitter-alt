@@ -1,0 +1,22 @@
+.twitter-alt-div {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  border: 1px solid #eee;
+  padding: 0.5rem;
+  color: #000;
+  background-color: rgb(255, 255, 255);
+  font-size: 1rem;
+  font-family: "TwitterChirp", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+  box-shadow: 0 -0.3125rem 1.5rem 0 rgba(0, 0, 0, 0.25);
+  pointer-events: none;
+  opacity: 1;
+  transition: transform 0.15s ease-out, opacity 0.15s ease-out;
+}
+
+.twitter-alt-div--hidden {
+  opacity: 0;
+  transform: translate3d(0, 100%, 0);
+}
+

@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+  "name": "twitter-alt",
+  "description": "Discover twitter image alternative text on hover/focus",
+  "version": "0.0.1",
+  "icons": {
+    "64": "icons/icon.png"
+  },
+  "background": {
+    "scripts": ["background_script.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://twitter.com/*"],
+      "js": ["content_script.js"],
+      "css": ["content_style.css"]
+    }
+  ],
+  "page_action": {
+    "default_icon": {
+      "64": "icons/icon-on.svg",
+      "96": "icons/icon-on.svg",
+      "128": "icons/icon-on.svg"
+    },
+    "default_title": "twitter-alt",
+    "show_matches": ["*://twitter.com/*"]
+  },
+  "permissions": ["activeTab", "tabs", "storage"]
+}
