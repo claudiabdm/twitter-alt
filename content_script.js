@@ -18,10 +18,9 @@
 
   function handleMouseEnterImage(e) {
     if (isImage(e)) {
-      const parent = e.target.parentElement;
       const gparent = e.target.parentElement.parentElement;
       div.textContent = e.target.alt == "" ? "Alt not found" : e.target.alt;
-      addClasses(div, parent);
+      addClasses(div);
       gparent.appendChild(div);
       gparent.addEventListener("mouseout", handleMouseOutImage, {
         once: true,
@@ -30,8 +29,7 @@
   }
   function handleMouseOutImage(e) {
     if (isImage(e)) {
-      const gparent = e.target.parentElement.parentElement;
-      removeClasses(div, gparent);
+      div.classList.add("twitter-alt-div--hidden");
     }
   }
 
@@ -42,23 +40,10 @@
     );
   }
 
-  function addClasses(instertedDiv, parent) {
+  function addClasses(instertedDiv) {
     instertedDiv.classList.add("twitter-alt-div--hidden", "twitter-alt-div");
-    parent.classList.add("twitter-alt-parent");
     requestAnimationFrame(() => {
       instertedDiv.classList.remove("twitter-alt-div--hidden");
-    });
-  }
-
-  function removeClasses(instertedDiv, gparent) {
-    instertedDiv.classList.add("twitter-alt-div--hidden");
-    let starttime = null;
-    requestAnimationFrame((timestamp) => {
-      if (!starttime) starttime = timestamp;
-      let runtime = timestamp - starttime;
-      if (runtime > 2000) {
-        gparent.removeChild(div);
-      }
     });
   }
 })();
