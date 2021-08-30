@@ -7,7 +7,7 @@ https://user-images.githubusercontent.com/44007726/131315627-40614fe9-046b-4ca0-
 
 
 ## Description
-Firefox extension to show image alt text.
+Firefox extension to show image alt text on Twitter.
 
 ## Features
 - Show alt text from images when hovering on them.
